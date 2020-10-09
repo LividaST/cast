@@ -7,7 +7,7 @@ window.__onGCastApiAvailable = function (isAvailable) {
 
   castContext.setOptions({
     autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED,
-    receiverApplicationId: '234F3A5F'
+    receiverApplicationId: '7D4698C0'
   });
 
   var stateChanged = cast.framework.CastContextEventType.CAST_STATE_CHANGED;
