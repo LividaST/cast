@@ -15,12 +15,12 @@ window.__onGCastApiAvailable = function (isAvailable) {
     var castSession = castContext.getCurrentSession();
     var mediainfo = new chrome.cast.media.MediaInfo('https://stream.livida.net', 'audio/mp3');
     mediainfo.metadata = new chrome.cast.media.MusicTrackMediaMetadata()
-    const apidata = await fetch('https://api.livida.net/api/radio').then(res => res.json())
+    const apidata = await fetch('https://livida.net/api/radio').then(res => res.json())
     mediainfo.metadata.metadataType = 3
-    mediainfo.metadata.title = apidata.data.song.name
-    mediainfo.metadata.artist = apidata.data.song.artist
+    mediainfo.metadata.title = apidata.nowplaying.song.name
+    mediainfo.metadata.artist = apidata.nowplaying.artist.name
     mediainfo.metadata.images = [{
-      'url': apidata.data.song.art
+      'url': apidata.nowplaying.album.art
     }]
     var request = new chrome.cast.media.LoadRequest(mediainfo)
 
