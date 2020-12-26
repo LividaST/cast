@@ -13,7 +13,7 @@ window.__onGCastApiAvailable = function (isAvailable) {
   var stateChanged = cast.framework.CastContextEventType.CAST_STATE_CHANGED;
   castContext.addEventListener(stateChanged, async function (event) {
     var castSession = castContext.getCurrentSession();
-    var mediainfo = new chrome.cast.media.MediaInfo('https://live.livida.net/live/85c67c04-7a5b-46a0-8aaf-e31e8156bb49/index.m3u8', 'application/x-mpegURL');
+    var mediainfo = new chrome.cast.media.MediaInfo('https://live.livida.net/live/85c67c04-7a5b-46a0-8aaf-e31e8156bb49/index.m3u8', 'application/vnd.apple.mpegurl');
     var request = new chrome.cast.media.LoadRequest(mediainfo)
 
 
