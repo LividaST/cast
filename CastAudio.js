@@ -14,7 +14,7 @@ window.__onGCastApiAvailable = function (isAvailable) {
   castContext.addEventListener(stateChanged, async function (event) {
     var castSession = castContext.getCurrentSession();
     var mediainfo = new chrome.cast.media.MediaInfo('https://stream.livida.net', 'audio/mp3');
-    mediainfo.streamType('LIVE')
+    mediainfo.streamType = 'LIVE'
     mediainfo.metadata = new chrome.cast.media.MusicTrackMediaMetadata()
     const apidata = await fetch('https://livida.net/api/radio').then(res => res.json())
     mediainfo.metadata.metadataType = 3
