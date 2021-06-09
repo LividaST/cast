@@ -18,7 +18,7 @@ window.__onGCastApiAvailable = function (isAvailable) {
     mediainfo.metadata = new chrome.cast.media.MusicTrackMediaMetadata()
     let apidata = await fetch('https://livida.net/api/radio').then(res => res.json())
     mediainfo.metadata.metadataType = 3
-    setInterval(function(){ 
+    setInterval(async function(){ 
       apidata = await fetch('https://livida.net/api/radio').then(res => res.json())
     }, 10000);
     mediainfo.metadata.title = apidata.nowplaying.song.name
