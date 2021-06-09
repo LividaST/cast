@@ -20,7 +20,7 @@ window.__onGCastApiAvailable = function (isAvailable) {
     mediainfo.metadata.metadataType = 3
     setInterval(async function(){ 
       apidata = await fetch('https://livida.net/api/radio').then(res => res.json())
-    }, 10000);
+    }, 30000);
     mediainfo.metadata.title = apidata.nowplaying.song.name
     mediainfo.metadata.artist = apidata.nowplaying.artist.name
     mediainfo.metadata.albumName = apidata.nowplaying.album.name
