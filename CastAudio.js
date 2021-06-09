@@ -16,11 +16,8 @@ window.__onGCastApiAvailable = function (isAvailable) {
     var mediainfo = new chrome.cast.media.MediaInfo('hhttps://azuracast.livida.net/radio/8000/aac.m4a', 'audio/aac');
     mediainfo.streamType = 'LIVE'
     mediainfo.metadata = new chrome.cast.media.MusicTrackMediaMetadata()
-    let apidata = await fetch('https://livida.net/api/radio').then(res => res.json())
+    var apidata = await fetch('https://livida.net/api/radio').then(res => res.json())
     mediainfo.metadata.metadataType = 3
-    setInterval(async function(){ 
-      apidata = await fetch('https://livida.net/api/radio').then(res => res.json())
-    }, 30000);
     mediainfo.metadata.title = apidata.nowplaying.song.name
     mediainfo.metadata.artist = apidata.nowplaying.artist.name
     mediainfo.metadata.albumName = apidata.nowplaying.album.name
