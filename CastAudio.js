@@ -13,7 +13,7 @@ window.__onGCastApiAvailable = function (isAvailable) {
   var stateChanged = cast.framework.CastContextEventType.CAST_STATE_CHANGED;
   castContext.addEventListener(stateChanged, async function (event) {
     var castSession = castContext.getCurrentSession();
-    var mediainfo = new chrome.cast.media.MediaInfo('hhttps://azuracast.livida.net/radio/8000/aac.m4a', 'audio/aac');
+    var mediainfo = new chrome.cast.media.MediaInfo('https://live.itsbounce.net', 'audio/mp3');
     mediainfo.streamType = 'LIVE'
     mediainfo.metadata = new chrome.cast.media.MusicTrackMediaMetadata()
     var request = new chrome.cast.media.LoadRequest(mediainfo)
